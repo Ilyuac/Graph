@@ -1,20 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25C5DA0A-2C54-4315-9B0E-2D4A2C9C0F96}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{B208286C-2C91-4312-B9F2-D8BA4501A1AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Graph</RootNamespace>
-    <AssemblyName>Graph</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,30 +18,107 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>8.0</LangVersion>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Graph</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\FETCH_HEAD" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\objects\06\e190cdcfb8dde30270a4e5657f8269053bd213" />
+    <None Include=".git\objects\07\2043fd9217019b7a54b5c5e1abb66ef37aa2fa" />
+    <None Include=".git\objects\0e\a0d6161627f006b1a922bed0979c59f2de9cc3" />
+    <None Include=".git\objects\10\1b9d0a1ddea4674f86c63930a31d3e7be833c9" />
+    <None Include=".git\objects\11\ef1f13086b6ea0b2e6fc185752f624fdb78910" />
+    <None Include=".git\objects\18\08556d20304edaffd06f1b21fa8e29cc8b66e8" />
+    <None Include=".git\objects\19\3aecc675e7d4600fde2d37cf350bce7a056948" />
+    <None Include=".git\objects\1a\47d746399586b943bbb0558e6a4850970dad96" />
+    <None Include=".git\objects\1c\f80d8c0e03469d0c7f69e0e1e542c4999a3a14" />
+    <None Include=".git\objects\1e\cccfcf042acaeaac002d59cfeb584d61a8260e" />
+    <None Include=".git\objects\23\c01abd26ee9b6eecdb93fea0c680c6f386cd28" />
+    <None Include=".git\objects\2a\37591716fda7c4b35b553f5a43dbae83ddf411" />
+    <None Include=".git\objects\33\a4f875ed24030150dfec935401287576ac390d" />
+    <None Include=".git\objects\35\bc35b8fdeaa503a33434ec592c9826521e590f" />
+    <None Include=".git\objects\39\645652af62950ebf3b28ec3a5400dcec30b1c4" />
+    <None Include=".git\objects\3e\802cd829117e817866e240a9bfc523c7111d3a" />
+    <None Include=".git\objects\43\e7c2c4d0717047d1cd887a6832becb67a4b407" />
+    <None Include=".git\objects\47\c308f41fd068a250f1cf77197f439ef1d025ce" />
+    <None Include=".git\objects\50\fe12b584d73bb7db214671db99a19665eefc1a" />
+    <None Include=".git\objects\58\30affa7436647f8459dc6ce08a2a5f8961b91d" />
+    <None Include=".git\objects\6a\6e24974f29eb47d19d15dce6feb64565e277a8" />
+    <None Include=".git\objects\6d\cccee17742878f94bfae924db2e6f0c924810e" />
+    <None Include=".git\objects\71\1a434a604748dd6902cc9bdf1674aa4af274b7" />
+    <None Include=".git\objects\71\813d79c57ded54e620964e94d3d29e12955338" />
+    <None Include=".git\objects\7b\e9bde5eff7b79df608708d93bf747f0cbbbfc9" />
+    <None Include=".git\objects\88\b826fbd0e17443e9d3a2b689656c9253c95782" />
+    <None Include=".git\objects\8c\68185589fe7b61e46f0143c2181c33229ea1a8" />
+    <None Include=".git\objects\8c\d34de64bc306b1875cd01b7674154d3216fce0" />
+    <None Include=".git\objects\8d\9277714326b030b939e55775ddd6dfa21227ce" />
+    <None Include=".git\objects\a8\a5a9fd14311fdee34edf5b09eb1d73a979f061" />
+    <None Include=".git\objects\b1\3f96c7b3fa52fe2e6b07f7094400247f432c69" />
+    <None Include=".git\objects\b9\f9941898fa495a6bacbe2286834e5d368d94d5" />
+    <None Include=".git\objects\bb\c404d93f6db5992fee33192e9f4282a3d906dc" />
+    <None Include=".git\objects\cb\8eca9e878452637790fa45bde4a9535d2e5589" />
+    <None Include=".git\objects\ce\3b6c941dd90d2b57c8b55bb7ea37ff2f4e3764" />
+    <None Include=".git\objects\d4\df0f6a4f17ee80f45fd2b380d65a037902c962" />
+    <None Include=".git\objects\d7\0fb2739941536535712678b9d0277287a46d87" />
+    <None Include=".git\objects\d8\3b7a54b04aa8a7a5ce4cc4db4b3a820953166a" />
+    <None Include=".git\objects\df\cfd56f444f9ae40e1082c07fe254cc547136cf" />
+    <None Include=".git\objects\e7\91d87be5477da87aee5648e902825292e158de" />
+    <None Include=".git\objects\f2\88702d2fa16d3cdf0035b15a9fcbc552cd88e7" />
+    <None Include=".git\ORIG_HEAD" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".vs\Graph\v16\.suo" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrowerGraph.cs" />
@@ -58,64 +131,43 @@
     <Compile Include="Graphs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="Resourse\Backet75x75f.png" />
+    <Content Include="Resourse\Bucket.75x75jpg.jpg" />
+    <Content Include="Resourse\Bucket.jpg" />
+    <Content Include="Resourse\Bucket75x75jpg.jpg" />
+    <Content Include="Resourse\Clear.png" />
+    <Content Include="Resourse\cursor.jpg" />
+    <Content Include="Resourse\icons\chain.jpg" />
+    <Content Include="Resourse\icons\cursor.jpg" />
+    <Content Include="Resourse\icons\cycle.jpg" />
+    <Content Include="Resourse\icons\delete.jpg" />
+    <Content Include="Resourse\icons\deleteAll.jpg" />
+    <Content Include="Resourse\icons\edge.jpg" />
+    <Content Include="Resourse\icons\vertex.jpg" />
+    <Content Include="Resourse\inc.jpg" />
+    <Content Include="Resourse\Pens.jpg" />
+    <Content Include="Resourse\smezh.jpg" />
+    <Content Include="Resourse\Vertex.png" />
+    <Content Include="Resourse\Vertex75x75.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resourse\Vertex.png" />
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\Pen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\Bucket.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\VertexIco.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\Pens.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\Clear.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\Vertex75x75.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\Backet75x75f.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\cursor.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\inc.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resourse\smezh.jpg" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
 </Project>
