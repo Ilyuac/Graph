@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Graph
 {
@@ -322,11 +324,13 @@ namespace Graph
             else
                 listBoxMatrix.Items.Clear();
         }
-
+        
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //TODO:
-            G.GetBitmap().Save("Graph");
+
+            G.GetBitmap().Save("Graph", ImageFormat.Jpeg);
+
         }
 
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
@@ -357,10 +361,14 @@ namespace Graph
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Открыть";
-            openFile.CheckPathExists = true;
-            openFile.CheckFileExists = true;
+            MessageBox.Show("Ведется разработка", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+//            OpenFileDialog openFile = new OpenFileDialog();
+//            openFile.Title = "Открыть";
+//            openFile.CheckPathExists = true;
+//            openFile.CheckFileExists = true;
+//            DialogResult result = openFile.ShowDialog();
+//;
+            
             //TODO:
         }
 
