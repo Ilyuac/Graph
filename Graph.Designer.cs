@@ -159,7 +159,7 @@
             this.butTriper.TabIndex = 6;
             this.butTriper.Text = "Коммивояжер";
             this.butTriper.UseVisualStyleBackColor = true;
-            this.butTriper.Click += new System.EventHandler(this.butTriper_Click);
+            this.butTriper.Click += new System.EventHandler(this.butTraval_Click);
             // 
             // butSimpleR
             // 

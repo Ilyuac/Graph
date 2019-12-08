@@ -483,7 +483,7 @@ namespace Graph
             }
         }
 
-        private void butTriper_Click(object sender, EventArgs e)
+        private void butTraval_Click(object sender, EventArgs e)
         {
             Travaler traval = new Travaler(Graph.VCount);
             traval.Show();
