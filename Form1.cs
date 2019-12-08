@@ -17,23 +17,12 @@ namespace Graph
         #region Global varies
 
         DrawerGraph G;
-
+        
         struct ColorGroups
         {
             public Color Color;
             public List<int> Group;
         }
-
-        struct Graph
-        {
-            public List<Vertex> V;
-            public List<Edge> E;
-
-            public int VCount { get { return V.Count; } }
-
-            public int ECount { get { return E.Count; } }
-        }
-        Graph graph = new Graph();
 
         int[,] IMatrix, AMatrix;
 
@@ -46,9 +35,9 @@ namespace Graph
         {
             InitializeComponent();
 
-            graph.V = new List<Vertex>();
+            Graph.V = new List<Vertex>();
             G = new DrawerGraph(DrowerPanel.Width, DrowerPanel.Height);
-            graph.E = new List<Edge>();
+            Graph.E = new List<Edge>();
             DrowerPanel.Image = G.GetBitmap();
         }
 
@@ -61,7 +50,7 @@ namespace Graph
             butClear.Enabled = true;
 
             G.ClearSheet();
-            G.DrawGraph(graph.V, graph.E);
+            G.DrawGraph(Graph.V, Graph.E);
             DrowerPanel.Image = G.GetBitmap();
             selected1 = -1;
         }
@@ -75,7 +64,7 @@ namespace Graph
             butClear.Enabled = true;
 
             G.ClearSheet();
-            G.DrawGraph(graph.V, graph.E);
+            G.DrawGraph(Graph.V, Graph.E);
             DrowerPanel.Image = G.GetBitmap();
         }
 
@@ -88,7 +77,7 @@ namespace Graph
             butClear.Enabled = true;
 
             G.ClearSheet();
-            G.DrawGraph(graph.V, graph.E);
+            G.DrawGraph(Graph.V, Graph.E);
             DrowerPanel.Image = G.GetBitmap();
             selected1 = -1;
             selected2 = -1;
@@ -103,7 +92,7 @@ namespace Graph
             butClear.Enabled = true;
 
             G.ClearSheet();
-            G.DrawGraph(graph.V, graph.E);
+            G.DrawGraph(Graph.V, Graph.E);
             DrowerPanel.Image = G.GetBitmap();
         }
 
@@ -120,8 +109,8 @@ namespace Graph
             var MBSave = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (MBSave == DialogResult.Yes)
             {
-                graph.V.Clear();
-                graph.E.Clear();
+                Graph.V.Clear();
+                Graph.E.Clear();
                 G.ClearSheet();
                 DrowerPanel.Image = G.GetBitmap();
             }
@@ -141,26 +130,26 @@ namespace Graph
         {
             if (butArrow.Enabled == false)
             {
-                for (int i = 0; i < graph.VCount; i++)
+                for (int i = 0; i < Graph.VCount; i++)
                 {
-                    if (Math.Pow((graph.V[i].x - e.X), 2) + Math.Pow((graph.V[i].y - e.Y), 2) <= G.R * G.R)
+                    if (Math.Pow((Graph.V[i].x - e.X), 2) + Math.Pow((Graph.V[i].y - e.Y), 2) <= G.R * G.R)
                     {
                         if (selected1 != -1)
                         {
                             selected1 = -1;
                             G.ClearSheet();
-                            G.DrawGraph(graph.V, graph.E);
+                            G.DrawGraph(Graph.V, Graph.E);
                             DrowerPanel.Image = G.GetBitmap();
                         }
                         if (selected1 == -1)
                         {
-                            G.DrawSelectVertex(graph.V[i]);
+                            G.DrawSelectVertex(Graph.V[i]);
                             selected1 = i;
                             DrowerPanel.Image = G.GetBitmap();
                             createAdjAndOut();
                             listBoxMatrix.Items.Clear();
                             int degree = 0;
-                            for (int j = 0; j < graph.VCount; j++)
+                            for (int j = 0; j < Graph.VCount; j++)
                                 degree += AMatrix[selected1, j];
                             listBoxMatrix.Items.Add("Степень вершины №" + (selected1 + 1) + " равна " + degree);
                             break;
@@ -171,8 +160,8 @@ namespace Graph
             //нажата кнопка "рисовать вершину"
             if (butVertex.Enabled == false)
             {
-                graph.V.Add(new Vertex(e.X, e.Y));
-                G.DrawVertex(new Vertex(e.X, e.Y), graph.VCount.ToString());
+                Graph.V.Add(new Vertex(e.X, e.Y));
+                G.DrawVertex(new Vertex(e.X, e.Y), Graph.VCount.ToString());
                 DrowerPanel.Image = G.GetBitmap();
             }
             //нажата кнопка "рисовать ребро"
@@ -180,23 +169,23 @@ namespace Graph
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    for (int i = 0; i < graph.VCount; i++)
+                    for (int i = 0; i < Graph.VCount; i++)
                     {
-                        if (Math.Pow((graph.V[i].x - e.X), 2) + Math.Pow((graph.V[i].y - e.Y), 2) <= G.R * G.R)
+                        if (Math.Pow((Graph.V[i].x - e.X), 2) + Math.Pow((Graph.V[i].y - e.Y), 2) <= G.R * G.R)
                         {
                             if (selected1 == -1)
                             {
-                                G.DrawSelectVertex(graph.V[i]);
+                                G.DrawSelectVertex(Graph.V[i]);
                                 selected1 = i;
                                 DrowerPanel.Image = G.GetBitmap();
                                 break;
                             }
                             if (selected2 == -1)
                             {
-                                G.DrawSelectVertex(graph.V[i]);
+                                G.DrawSelectVertex(Graph.V[i]);
                                 selected2 = i;
-                                graph.E.Add(new Edge(selected1, selected2));
-                                G.DrawEdgeorArc(graph.V[selected1], graph.V[selected2], graph.E[graph.ECount - 1], graph.ECount - 1);
+                                Graph.E.Add(new Edge(selected1, selected2));
+                                G.DrawEdgeorArc(Graph.V[selected1], Graph.V[selected2], Graph.E[Graph.ECount - 1], Graph.ECount - 1);
                                 selected1 = -1;
                                 selected2 = -1;
                                 DrowerPanel.Image = G.GetBitmap();
@@ -208,9 +197,9 @@ namespace Graph
                 if (e.Button == MouseButtons.Right)
                 {
                     if ((selected1 != -1) &&
-                        (Math.Pow((graph.V[selected1].x - e.X), 2) + Math.Pow((graph.V[selected1].y - e.Y), 2) <= G.R * G.R))
+                        (Math.Pow((Graph.V[selected1].x - e.X), 2) + Math.Pow((Graph.V[selected1].y - e.Y), 2) <= G.R * G.R))
                     {
-                        G.DrawVertex(graph.V[selected1], (selected1 + 1).ToString());
+                        G.DrawVertex(Graph.V[selected1], (selected1 + 1).ToString());
                         selected1 = -1;
                         DrowerPanel.Image = G.GetBitmap();
                     }
@@ -221,24 +210,24 @@ namespace Graph
             {
                 bool flag = false; //удалили ли что-нибудь по ЭТОМУ клику
                 //ищем, возможно была нажата вершина
-                for (int i = 0; i < graph.VCount; i++)
+                for (int i = 0; i < Graph.VCount; i++)
                 {
-                    if (Math.Pow((graph.V[i].x - e.X), 2) + Math.Pow((graph.V[i].y - e.Y), 2) <= G.R * G.R)
+                    if (Math.Pow((Graph.V[i].x - e.X), 2) + Math.Pow((Graph.V[i].y - e.Y), 2) <= G.R * G.R)
                     {
-                        for (int j = 0; j < graph.ECount; j++)
+                        for (int j = 0; j < Graph.ECount; j++)
                         {
-                            if ((graph.E[j].Vertex1 == i) || (graph.E[j].Vertex2 == i))
+                            if ((Graph.E[j].Vertex1 == i) || (Graph.E[j].Vertex2 == i))
                             {
-                                graph.E.RemoveAt(j);
+                                Graph.E.RemoveAt(j);
                                 j--;
                             }
                             else
                             {
-                                if (graph.E[j].Vertex1 > i) graph.E[j].Vertex1--;
-                                if (graph.E[j].Vertex2 > i) graph.E[j].Vertex2--;
+                                if (Graph.E[j].Vertex1 > i) Graph.E[j].Vertex1--;
+                                if (Graph.E[j].Vertex2 > i) Graph.E[j].Vertex2--;
                             }
                         }
-                        graph.V.RemoveAt(i);
+                        Graph.V.RemoveAt(i);
                         flag = true;
                         break;
                     }
@@ -246,27 +235,27 @@ namespace Graph
                 //ищем, возможно было нажато ребро
                 if (!flag)
                 {
-                    for (int i = 0; i < graph.ECount; i++)
+                    for (int i = 0; i < Graph.ECount; i++)
                     {
-                        if (graph.E[i].Vertex1 == graph.E[i].Vertex2) //если это петля
+                        if (Graph.E[i].Vertex1 == Graph.E[i].Vertex2) //если это петля
                         {
-                            if ((Math.Pow((graph.V[graph.E[i].Vertex1].x - G.R - e.X), 2) + Math.Pow((graph.V[graph.E[i].Vertex1].y - G.R - e.Y), 2) <= ((G.R + 2) * (G.R + 2))) &&
-                                (Math.Pow((graph.V[graph.E[i].Vertex1].x - G.R - e.X), 2) + Math.Pow((graph.V[graph.E[i].Vertex1].y - G.R - e.Y), 2) >= ((G.R - 2) * (G.R - 2))))
+                            if ((Math.Pow((Graph.V[Graph.E[i].Vertex1].x - G.R - e.X), 2) + Math.Pow((Graph.V[Graph.E[i].Vertex1].y - G.R - e.Y), 2) <= ((G.R + 2) * (G.R + 2))) &&
+                                (Math.Pow((Graph.V[Graph.E[i].Vertex1].x - G.R - e.X), 2) + Math.Pow((Graph.V[Graph.E[i].Vertex1].y - G.R - e.Y), 2) >= ((G.R - 2) * (G.R - 2))))
                             {
-                                graph.E.RemoveAt(i);
+                                Graph.E.RemoveAt(i);
                                 flag = true;
                                 break;
                             }
                         }
                         else //не петля
                         {
-                            if (((e.X - graph.V[graph.E[i].Vertex1].x) * (graph.V[graph.E[i].Vertex2].y - graph.V[graph.E[i].Vertex1].y) / (graph.V[graph.E[i].Vertex2].x - graph.V[graph.E[i].Vertex1].x) + graph.V[graph.E[i].Vertex1].y) <= (e.Y + 4) &&
-                                ((e.X - graph.V[graph.E[i].Vertex1].x) * (graph.V[graph.E[i].Vertex2].y - graph.V[graph.E[i].Vertex1].y) / (graph.V[graph.E[i].Vertex2].x - graph.V[graph.E[i].Vertex1].x) + graph.V[graph.E[i].Vertex1].y) >= (e.Y - 4))
+                            if (((e.X - Graph.V[Graph.E[i].Vertex1].x) * (Graph.V[Graph.E[i].Vertex2].y - Graph.V[Graph.E[i].Vertex1].y) / (Graph.V[Graph.E[i].Vertex2].x - Graph.V[Graph.E[i].Vertex1].x) + Graph.V[Graph.E[i].Vertex1].y) <= (e.Y + 4) &&
+                                ((e.X - Graph.V[Graph.E[i].Vertex1].x) * (Graph.V[Graph.E[i].Vertex2].y - Graph.V[Graph.E[i].Vertex1].y) / (Graph.V[Graph.E[i].Vertex2].x - Graph.V[Graph.E[i].Vertex1].x) + Graph.V[Graph.E[i].Vertex1].y) >= (e.Y - 4))
                             {
-                                if ((graph.V[graph.E[i].Vertex1].x <= graph.V[graph.E[i].Vertex2].x && graph.V[graph.E[i].Vertex1].x <= e.X && e.X <= graph.V[graph.E[i].Vertex2].x) ||
-                                    (graph.V[graph.E[i].Vertex1].x >= graph.V[graph.E[i].Vertex2].x && graph.V[graph.E[i].Vertex1].x >= e.X && e.X >= graph.V[graph.E[i].Vertex2].x))
+                                if ((Graph.V[Graph.E[i].Vertex1].x <= Graph.V[Graph.E[i].Vertex2].x && Graph.V[Graph.E[i].Vertex1].x <= e.X && e.X <= Graph.V[Graph.E[i].Vertex2].x) ||
+                                    (Graph.V[Graph.E[i].Vertex1].x >= Graph.V[Graph.E[i].Vertex2].x && Graph.V[Graph.E[i].Vertex1].x >= e.X && e.X >= Graph.V[Graph.E[i].Vertex2].x))
                                 {
-                                    graph.E.RemoveAt(i);
+                                    Graph.E.RemoveAt(i);
                                     flag = true;
                                     break;
                                 }
@@ -278,7 +267,7 @@ namespace Graph
                 if (flag)
                 {
                     G.ClearSheet();
-                    G.DrawGraph(graph.V, graph.E);
+                    G.DrawGraph(Graph.V, Graph.E);
                     DrowerPanel.Image = G.GetBitmap();
                 }
             }
@@ -286,17 +275,17 @@ namespace Graph
 
         private void createAdjAndOut()
         {
-            AMatrix = new int[graph.VCount, graph.VCount];
-            G.fillAdjacencyMatrix(graph.VCount, graph.E, AMatrix);
+            AMatrix = new int[Graph.VCount, Graph.VCount];
+            G.fillAdjacencyMatrix(Graph.VCount, Graph.E, AMatrix);
             listBoxMatrix.Items.Clear();
             string sOut = "    ";
-            for (int i = 0; i < graph.VCount; i++)
+            for (int i = 0; i < Graph.VCount; i++)
                 sOut += (i + 1) + " ";
             listBoxMatrix.Items.Add(sOut);
-            for (int i = 0; i < graph.VCount; i++)
+            for (int i = 0; i < Graph.VCount; i++)
             {
                 sOut = (i + 1) + " | ";
-                for (int j = 0; j < graph.VCount; j++)
+                for (int j = 0; j < Graph.VCount; j++)
                     sOut += AMatrix[i, j] + " ";
                 listBoxMatrix.Items.Add(sOut);
             }
@@ -304,19 +293,19 @@ namespace Graph
 
         private void createIncAndOut()
         {
-            if (graph.ECount > 0)
+            if (Graph.ECount > 0)
             {
-                IMatrix = new int[graph.VCount, graph.ECount];
-                G.fillIncidenceMatrix(graph.VCount, graph.E, IMatrix);
+                IMatrix = new int[Graph.VCount, Graph.ECount];
+                G.fillIncidenceMatrix(Graph.VCount, Graph.E, IMatrix);
                 listBoxMatrix.Items.Clear();
                 string sOut = "    ";
-                for (int i = 0; i < graph.ECount; i++)
+                for (int i = 0; i < Graph.ECount; i++)
                     sOut += (char)('a' + i) + " ";
                 listBoxMatrix.Items.Add(sOut);
-                for (int i = 0; i < graph.VCount; i++)
+                for (int i = 0; i < Graph.VCount; i++)
                 {
                     sOut = (i + 1) + " | ";
-                    for (int j = 0; j < graph.ECount; j++)
+                    for (int j = 0; j < Graph.ECount; j++)
                         sOut += IMatrix[i, j] + " ";
                     listBoxMatrix.Items.Add(sOut);
                 }
@@ -409,7 +398,7 @@ namespace Graph
         {
             PaintGraph();
             G.ClearSheet();
-            G.DrawGraph(graph.V, graph.E);
+            G.DrawGraph(Graph.V, Graph.E);
             DrowerPanel.Image = G.GetBitmap();
         }
 
@@ -418,8 +407,8 @@ namespace Graph
         private void PaintGraph()
         {
             CreateGroups();
-            AMatrix = new int[graph.VCount, graph.VCount];
-            G.fillAdjacencyMatrix(graph.VCount, graph.E, AMatrix);
+            AMatrix = new int[Graph.VCount, Graph.VCount];
+            G.fillAdjacencyMatrix(Graph.VCount, Graph.E, AMatrix);
 
             List<int> VColor = new List<int>(); int fl;
             int[,] AMCopy = AMatrix;
@@ -467,14 +456,14 @@ namespace Graph
         {
             listBoxMatrix.Items.Clear();
             //1-white 2-black
-            int[] color = new int[graph.VCount];
-            for (int i = 0; i < graph.VCount; i++)
+            int[] color = new int[Graph.VCount];
+            for (int i = 0; i < Graph.VCount; i++)
             {
-                for (int k = 0; k < graph.VCount; k++)
+                for (int k = 0; k < Graph.VCount; k++)
                     color[k] = 1;
                 List<int> cycle = new List<int>();
                 cycle.Add(i + 1);
-                DFScycle(i, i, graph.E, color, -1, cycle);
+                DFScycle(i, i, Graph.E, color, -1, cycle);
             }
         }
 
@@ -494,9 +483,15 @@ namespace Graph
             }
         }
 
+        private void butTriper_Click(object sender, EventArgs e)
+        {
+            Triper triper = new Triper(Graph.VCount);
+            triper.Show();
+        }
+
         private void PaintVertex(List<ColorGroups> colorGroups)
         {
-            for (int i = 0; i < graph.VCount; i++)
+            for (int i = 0; i < Graph.VCount; i++)
             {
                 foreach (ColorGroups color in colorGroups)
                 {
@@ -504,7 +499,7 @@ namespace Graph
                     {
                         if (vertex == i)
                         {
-                            graph.V[i].Color = color.Color;
+                            Graph.V[i].Color = color.Color;
                         }
                     }
                 }

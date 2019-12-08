@@ -36,6 +36,7 @@
             this.butAMatrix = new System.Windows.Forms.Button();
             this.butIMatrix = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.butSimpleR = new System.Windows.Forms.Button();
             this.butPaintGrath = new System.Windows.Forms.Button();
             this.VerticalSpliter = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,7 +57,7 @@
             this.графыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.неориентированныйГрафToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ориентированныйГрафToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.butSimpleR = new System.Windows.Forms.Button();
+            this.butTriper = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DrowerPanel)).BeginInit();
             this.HorisontalSpliter.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -140,6 +141,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.butTriper);
             this.panel3.Controls.Add(this.butSimpleR);
             this.panel3.Controls.Add(this.butPaintGrath);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -147,6 +149,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(253, 117);
             this.panel3.TabIndex = 4;
+            // 
+            // butSimpleR
+            // 
+            this.butSimpleR.Location = new System.Drawing.Point(51, 45);
+            this.butSimpleR.Name = "butSimpleR";
+            this.butSimpleR.Size = new System.Drawing.Size(160, 29);
+            this.butSimpleR.TabIndex = 5;
+            this.butSimpleR.Text = "Найти простые цыклы";
+            this.butSimpleR.UseVisualStyleBackColor = true;
+            this.butSimpleR.Click += new System.EventHandler(this.butSimpleR_Click);
             // 
             // butPaintGrath
             // 
@@ -258,7 +270,7 @@
             this.графыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -338,15 +350,15 @@
             this.ориентированныйГрафToolStripMenuItem.Text = "Ориентированный граф";
             this.ориентированныйГрафToolStripMenuItem.Click += new System.EventHandler(this.ориентированныйГрафToolStripMenuItem_Click);
             // 
-            // butSimpleR
+            // butTriper
             // 
-            this.butSimpleR.Location = new System.Drawing.Point(51, 45);
-            this.butSimpleR.Name = "butSimpleR";
-            this.butSimpleR.Size = new System.Drawing.Size(160, 29);
-            this.butSimpleR.TabIndex = 5;
-            this.butSimpleR.Text = "Найти простые цыклы";
-            this.butSimpleR.UseVisualStyleBackColor = true;
-            this.butSimpleR.Click += new System.EventHandler(this.butSimpleR_Click);
+            this.butTriper.Location = new System.Drawing.Point(51, 80);
+            this.butTriper.Name = "butTriper";
+            this.butTriper.Size = new System.Drawing.Size(160, 31);
+            this.butTriper.TabIndex = 6;
+            this.butTriper.Text = "Коммивояжер";
+            this.butTriper.UseVisualStyleBackColor = true;
+            this.butTriper.Click += new System.EventHandler(this.butTriper_Click);
             // 
             // MainForm
             // 
@@ -403,6 +415,7 @@
         private System.Windows.Forms.Button butPaintGrath;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button butSimpleR;
+        private System.Windows.Forms.Button butTriper;
     }
 }
 

@@ -32,10 +32,23 @@ namespace Graph
         public int Vertex1 { get; set; }
         public int Vertex2 { get; set; }
 
+        public int Weight { get; set; }
+
         public Edge(int v1,int v2)
         {
             Vertex1 = v1;
             Vertex2 = v2;
         }
     }
+
+    public abstract class Graph
+    {
+            public static List<Vertex> V { get; set; }
+            public static List<Edge> E { get; set; }
+
+            public static int VCount { get { return V.Count; } }
+
+            public static int ECount { get { return E.Count; } }
+    }
+    
 }
