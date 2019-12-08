@@ -1,27 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Graph
 {
-    public partial class Triper : Form
+    public partial class Travaler : Form
     {
-        public Triper(int rang)
+        public Travaler(int rang)
         {
             InitializeComponent();
 
-            this.triperInf = new TriperInf(rang);
+            this.triperInf = new TravalInf(rang);
             // 
             // triperInf
             // 
-            this.triperInf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.triperInf.Dock = DockStyle.Fill;
             this.triperInf.Location = new System.Drawing.Point(0, 0);
-            this.triperInf.Name = "triperInf";
+            this.triperInf.Name = "TravalInf";
             this.triperInf.Size = new System.Drawing.Size(800, 450);
             this.triperInf.TabIndex = 0;
             this.Controls.Add(this.triperInf);

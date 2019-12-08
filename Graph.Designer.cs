@@ -36,6 +36,7 @@
             this.butAMatrix = new System.Windows.Forms.Button();
             this.butIMatrix = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.butTriper = new System.Windows.Forms.Button();
             this.butSimpleR = new System.Windows.Forms.Button();
             this.butPaintGrath = new System.Windows.Forms.Button();
             this.VerticalSpliter = new System.Windows.Forms.TableLayoutPanel();
@@ -57,7 +58,7 @@
             this.графыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.неориентированныйГрафToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ориентированныйГрафToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.butTriper = new System.Windows.Forms.Button();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DrowerPanel)).BeginInit();
             this.HorisontalSpliter.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -75,7 +76,7 @@
             this.DrowerPanel.Location = new System.Drawing.Point(0, 0);
             this.DrowerPanel.MaximumSize = new System.Drawing.Size(1000, 1500);
             this.DrowerPanel.Name = "DrowerPanel";
-            this.DrowerPanel.Size = new System.Drawing.Size(972, 734);
+            this.DrowerPanel.Size = new System.Drawing.Size(972, 764);
             this.DrowerPanel.TabIndex = 2;
             this.DrowerPanel.TabStop = false;
             this.DrowerPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrowerPanel_MouseClick);
@@ -94,7 +95,7 @@
             this.HorisontalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.71195F));
             this.HorisontalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.28806F));
             this.HorisontalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.HorisontalSpliter.Size = new System.Drawing.Size(259, 734);
+            this.HorisontalSpliter.Size = new System.Drawing.Size(259, 764);
             this.HorisontalSpliter.TabIndex = 0;
             // 
             // listBoxMatrix
@@ -102,9 +103,9 @@
             this.listBoxMatrix.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxMatrix.FormattingEnabled = true;
             this.listBoxMatrix.ItemHeight = 16;
-            this.listBoxMatrix.Location = new System.Drawing.Point(3, 99);
+            this.listBoxMatrix.Location = new System.Drawing.Point(3, 103);
             this.listBoxMatrix.Name = "listBoxMatrix";
-            this.listBoxMatrix.Size = new System.Drawing.Size(253, 509);
+            this.listBoxMatrix.Size = new System.Drawing.Size(253, 535);
             this.listBoxMatrix.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -114,13 +115,13 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(253, 90);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(253, 94);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // butAMatrix
             // 
             this.butAMatrix.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.butAMatrix.Image = global::Graph.Properties.Resources.smezh;
+            this.butAMatrix.Image = ((System.Drawing.Image)(resources.GetObject("butAMatrix.Image")));
             this.butAMatrix.Location = new System.Drawing.Point(3, 3);
             this.butAMatrix.Name = "butAMatrix";
             this.butAMatrix.Size = new System.Drawing.Size(123, 78);
@@ -131,7 +132,7 @@
             // butIMatrix
             // 
             this.butIMatrix.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.butIMatrix.Image = global::Graph.Properties.Resources.inc;
+            this.butIMatrix.Image = ((System.Drawing.Image)(resources.GetObject("butIMatrix.Image")));
             this.butIMatrix.Location = new System.Drawing.Point(132, 3);
             this.butIMatrix.Name = "butIMatrix";
             this.butIMatrix.Size = new System.Drawing.Size(116, 78);
@@ -145,16 +146,26 @@
             this.panel3.Controls.Add(this.butSimpleR);
             this.panel3.Controls.Add(this.butPaintGrath);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 614);
+            this.panel3.Location = new System.Drawing.Point(3, 644);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(253, 117);
             this.panel3.TabIndex = 4;
             // 
+            // butTriper
+            // 
+            this.butTriper.Location = new System.Drawing.Point(5, 81);
+            this.butTriper.Name = "butTriper";
+            this.butTriper.Size = new System.Drawing.Size(170, 36);
+            this.butTriper.TabIndex = 6;
+            this.butTriper.Text = "Коммивояжер";
+            this.butTriper.UseVisualStyleBackColor = true;
+            this.butTriper.Click += new System.EventHandler(this.butTriper_Click);
+            // 
             // butSimpleR
             // 
-            this.butSimpleR.Location = new System.Drawing.Point(51, 45);
+            this.butSimpleR.Location = new System.Drawing.Point(5, 42);
             this.butSimpleR.Name = "butSimpleR";
-            this.butSimpleR.Size = new System.Drawing.Size(160, 29);
+            this.butSimpleR.Size = new System.Drawing.Size(170, 36);
             this.butSimpleR.TabIndex = 5;
             this.butSimpleR.Text = "Найти простые цыклы";
             this.butSimpleR.UseVisualStyleBackColor = true;
@@ -162,9 +173,9 @@
             // 
             // butPaintGrath
             // 
-            this.butPaintGrath.Location = new System.Drawing.Point(49, 3);
+            this.butPaintGrath.Location = new System.Drawing.Point(3, 3);
             this.butPaintGrath.Name = "butPaintGrath";
-            this.butPaintGrath.Size = new System.Drawing.Size(162, 36);
+            this.butPaintGrath.Size = new System.Drawing.Size(172, 36);
             this.butPaintGrath.TabIndex = 4;
             this.butPaintGrath.Text = "Раскрасить граф";
             this.butPaintGrath.UseVisualStyleBackColor = true;
@@ -186,7 +197,7 @@
             this.VerticalSpliter.Name = "VerticalSpliter";
             this.VerticalSpliter.RowCount = 1;
             this.VerticalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.VerticalSpliter.Size = new System.Drawing.Size(1362, 740);
+            this.VerticalSpliter.Size = new System.Drawing.Size(1362, 770);
             this.VerticalSpliter.TabIndex = 0;
             // 
             // panel1
@@ -199,12 +210,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(113, 734);
+            this.panel1.Size = new System.Drawing.Size(113, 764);
             this.panel1.TabIndex = 3;
             // 
             // butClear
             // 
-            this.butClear.Image = global::Graph.Properties.Resources.Backet75x75f;
+            this.butClear.Image = ((System.Drawing.Image)(resources.GetObject("butClear.Image")));
             this.butClear.Location = new System.Drawing.Point(9, 350);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(89, 85);
@@ -245,7 +256,7 @@
             // 
             // butArrow
             // 
-            this.butArrow.Image = global::Graph.Properties.Resources.cursor;
+            this.butArrow.Image = ((System.Drawing.Image)(resources.GetObject("butArrow.Image")));
             this.butArrow.Location = new System.Drawing.Point(9, 9);
             this.butArrow.Name = "butArrow";
             this.butArrow.Size = new System.Drawing.Size(89, 84);
@@ -259,7 +270,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(122, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(972, 734);
+            this.panel2.Size = new System.Drawing.Size(972, 764);
             this.panel2.TabIndex = 4;
             // 
             // menuStrip1
@@ -267,7 +278,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.графыToolStripMenuItem});
+            this.графыToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1362, 28);
@@ -290,38 +302,38 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // сщхранитьToolStripMenuItem
             // 
             this.сщхранитьToolStripMenuItem.Name = "сщхранитьToolStripMenuItem";
-            this.сщхранитьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.сщхранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.сщхранитьToolStripMenuItem.Text = "Сохранить";
             this.сщхранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(189, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -350,21 +362,18 @@
             this.ориентированныйГрафToolStripMenuItem.Text = "Ориентированный граф";
             this.ориентированныйГрафToolStripMenuItem.Click += new System.EventHandler(this.ориентированныйГрафToolStripMenuItem_Click);
             // 
-            // butTriper
+            // оПрограммеToolStripMenuItem
             // 
-            this.butTriper.Location = new System.Drawing.Point(51, 80);
-            this.butTriper.Name = "butTriper";
-            this.butTriper.Size = new System.Drawing.Size(160, 31);
-            this.butTriper.TabIndex = 6;
-            this.butTriper.Text = "Коммивояжер";
-            this.butTriper.UseVisualStyleBackColor = true;
-            this.butTriper.Click += new System.EventHandler(this.butTriper_Click);
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 768);
+            this.ClientSize = new System.Drawing.Size(1362, 798);
             this.Controls.Add(this.VerticalSpliter);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -416,6 +425,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button butSimpleR;
         private System.Windows.Forms.Button butTriper;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

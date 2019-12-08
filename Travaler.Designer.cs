@@ -1,6 +1,6 @@
 ﻿namespace Graph
 {
-    partial class Triper
+    partial class Travaler
     {
         /// <summary>
         /// Required designer variable.
@@ -46,6 +46,6 @@
 
         #endregion
 
-        private TriperInf triperInf;
+        private TravalInf triperInf;
     }
 }

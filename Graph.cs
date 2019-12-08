@@ -485,8 +485,14 @@ namespace Graph
 
         private void butTriper_Click(object sender, EventArgs e)
         {
-            Triper triper = new Triper(Graph.VCount);
-            triper.Show();
+            Travaler traval = new Travaler(Graph.VCount);
+            traval.Show();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
         }
 
         private void PaintVertex(List<ColorGroups> colorGroups)

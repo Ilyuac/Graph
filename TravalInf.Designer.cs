@@ -1,6 +1,6 @@
 ﻿namespace Graph
 {
-    partial class TriperInf
+    partial class TravalInf
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
