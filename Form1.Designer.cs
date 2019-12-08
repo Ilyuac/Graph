@@ -56,6 +56,7 @@
             this.графыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.неориентированныйГрафToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ориентированныйГрафToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.butSimpleR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DrowerPanel)).BeginInit();
             this.HorisontalSpliter.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -139,6 +140,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.butSimpleR);
             this.panel3.Controls.Add(this.butPaintGrath);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 614);
@@ -256,7 +258,7 @@
             this.графыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -336,6 +338,16 @@
             this.ориентированныйГрафToolStripMenuItem.Text = "Ориентированный граф";
             this.ориентированныйГрафToolStripMenuItem.Click += new System.EventHandler(this.ориентированныйГрафToolStripMenuItem_Click);
             // 
+            // butSimpleR
+            // 
+            this.butSimpleR.Location = new System.Drawing.Point(51, 45);
+            this.butSimpleR.Name = "butSimpleR";
+            this.butSimpleR.Size = new System.Drawing.Size(160, 29);
+            this.butSimpleR.TabIndex = 5;
+            this.butSimpleR.Text = "Найти простые цыклы";
+            this.butSimpleR.UseVisualStyleBackColor = true;
+            this.butSimpleR.Click += new System.EventHandler(this.butSimpleR_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,6 +402,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button butPaintGrath;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button butSimpleR;
     }
 }
 
