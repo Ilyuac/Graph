@@ -38,7 +38,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormTravaler";
-            this.Text = "Задайте матрицу весов:";
+            this.Text = "Задайте вес ребер";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Triper_FormClosing);
             this.ResumeLayout(false);
 

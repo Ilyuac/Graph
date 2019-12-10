@@ -493,47 +493,54 @@ namespace Graph
 
         private void GetRoute(object s, FormClosedEventArgs e)
         {
-            //Travaler.Route route = Travaler.GetShortRoute(0);
-            butSimpleR_Click(s,e);
-
-            List<string> Cicles = new List<string>();
-
-            for(int i=0;i<listBoxMatrix.Items.Count;i++)
-                Cicles.Add(listBoxMatrix.Items[i].ToString());
-
-            listBoxMatrix.Items.Clear();
-
-            List<int> Wheidhts = new List<int>();
-
-            int summ = 0;
-            foreach (string str in Cicles)
+            if (Graph.ECount > 0)
             {
-                for (int i = 0; i < str.Length; i++)
+                //Travaler.Route route = Travaler.GetShortRoute(0);
+                butSimpleR_Click(s, e);
+
+                List<string> Cicles = new List<string>();
+
+                for (int i = 0; i < listBoxMatrix.Items.Count; i++)
+                    Cicles.Add(listBoxMatrix.Items[i].ToString());
+
+                listBoxMatrix.Items.Clear();
+
+                List<int> Wheidhts = new List<int>();
+
+                int summ = 0;
+                foreach (string str in Cicles)
                 {
-                    foreach (Edge edge in Graph.E)
+                    for (int i = 0; i < str.Length; i++)
                     {
-                        if (str.Length-1 >= i + 2)
+                        foreach (Edge edge in Graph.E)
                         {
-                            if (str[i].ToString() == (edge.Vertex1+1).ToString() && str[i + 2].ToString() == (edge.Vertex2+1).ToString() || str[i].ToString() == (edge.Vertex2+1).ToString() && str[i + 2].ToString() == (edge.Vertex1+1).ToString())
+                            if (str.Length - 1 >= i + 2)
                             {
-                                summ += edge.Weight;
+                                if (str[i].ToString() == (edge.Vertex1 + 1).ToString() && str[i + 2].ToString() == (edge.Vertex2 + 1).ToString() || str[i].ToString() == (edge.Vertex2 + 1).ToString() && str[i + 2].ToString() == (edge.Vertex1 + 1).ToString())
+                                {
+                                    summ += edge.Weight;
+                                }
                             }
                         }
                     }
+                    Wheidhts.Add(summ);
+                    summ = 0;
+
                 }
-                Wheidhts.Add(summ);
-                summ = 0;
 
-            }
+                int Min = Wheidhts.Min();
 
-            int Min = Wheidhts.Min();
-
-            for(int i =0;i<Wheidhts.Count;i++)
-            {
-                if(Wheidhts[i]==Min)
+                for (int i = 0; i < Wheidhts.Count; i++)
                 {
-                    listBoxMatrix.Items.Add("Маршрут:\n" + Cicles[i] + "\nВес маршрута: " + Wheidhts[i].ToString());
+                    if (Wheidhts[i] == Min)
+                    {
+                        listBoxMatrix.Items.Add("Маршрут:\n" + Cicles[i] + "\nВес маршрута: " + Wheidhts[i].ToString());
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Ребра не заданы.", "Сообщение");
             }
 
             //string str="";

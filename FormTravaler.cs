@@ -23,7 +23,7 @@ namespace Graph
 
 
             this.Height = (rang) * 35;
-            this.Width = (rang) * 55;
+            this.Width = (rang) * 60;
         }
 
         private void Triper_FormClosing(object sender, FormClosingEventArgs e)
