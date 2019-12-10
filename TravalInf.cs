@@ -17,7 +17,7 @@ namespace Graph
                     text = new TextBox();
                     text.Name = (i*10+j).ToString();
                     text.Tag = i*10+j;
-                    text.Width = 20;
+                    text.Width = 45;
                     text.Text = "0";
                     MatrixPanel.Controls.Add(text);
                 }

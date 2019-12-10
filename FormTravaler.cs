@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Graph
 {
-    public partial class Travaler : Form
+    public partial class FormTravaler : Form
     {
-        public Travaler(int rang)
+        public FormTravaler(int rang)
         {
             InitializeComponent();
 
@@ -22,8 +22,8 @@ namespace Graph
 
 
 
-            this.Height = (rang - 1) * 25;
-            this.Width = (rang - 1) * 30;
+            this.Height = (rang) * 35;
+            this.Width = (rang) * 55;
         }
 
         private void Triper_FormClosing(object sender, FormClosingEventArgs e)

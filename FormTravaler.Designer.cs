@@ -1,6 +1,6 @@
 ﻿namespace Graph
 {
-    partial class Travaler
+    partial class FormTravaler
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // Triper
+            // FormTravaler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Triper";
-            this.Text = "Triper";
+            this.Name = "FormTravaler";
+            this.Text = "Задайте матрицу весов:";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Triper_FormClosing);
             this.ResumeLayout(false);
 

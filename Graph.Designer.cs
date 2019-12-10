@@ -76,7 +76,7 @@
             this.DrowerPanel.Location = new System.Drawing.Point(0, 0);
             this.DrowerPanel.MaximumSize = new System.Drawing.Size(1000, 1500);
             this.DrowerPanel.Name = "DrowerPanel";
-            this.DrowerPanel.Size = new System.Drawing.Size(972, 764);
+            this.DrowerPanel.Size = new System.Drawing.Size(987, 764);
             this.DrowerPanel.TabIndex = 2;
             this.DrowerPanel.TabStop = false;
             this.DrowerPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrowerPanel_MouseClick);
@@ -89,13 +89,13 @@
             this.HorisontalSpliter.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.HorisontalSpliter.Controls.Add(this.panel3, 0, 2);
             this.HorisontalSpliter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HorisontalSpliter.Location = new System.Drawing.Point(1100, 3);
+            this.HorisontalSpliter.Location = new System.Drawing.Point(1115, 3);
             this.HorisontalSpliter.Name = "HorisontalSpliter";
             this.HorisontalSpliter.RowCount = 3;
             this.HorisontalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.71195F));
             this.HorisontalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.28806F));
             this.HorisontalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.HorisontalSpliter.Size = new System.Drawing.Size(259, 764);
+            this.HorisontalSpliter.Size = new System.Drawing.Size(275, 764);
             this.HorisontalSpliter.TabIndex = 0;
             // 
             // listBoxMatrix
@@ -105,7 +105,7 @@
             this.listBoxMatrix.ItemHeight = 16;
             this.listBoxMatrix.Location = new System.Drawing.Point(3, 103);
             this.listBoxMatrix.Name = "listBoxMatrix";
-            this.listBoxMatrix.Size = new System.Drawing.Size(253, 535);
+            this.listBoxMatrix.Size = new System.Drawing.Size(269, 535);
             this.listBoxMatrix.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -115,7 +115,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(253, 94);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 94);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // butAMatrix
@@ -148,7 +148,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 644);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(253, 117);
+            this.panel3.Size = new System.Drawing.Size(269, 117);
             this.panel3.TabIndex = 4;
             // 
             // butTriper
@@ -163,7 +163,7 @@
             // 
             // butSimpleR
             // 
-            this.butSimpleR.Location = new System.Drawing.Point(5, 42);
+            this.butSimpleR.Location = new System.Drawing.Point(5, 41);
             this.butSimpleR.Name = "butSimpleR";
             this.butSimpleR.Size = new System.Drawing.Size(170, 36);
             this.butSimpleR.TabIndex = 5;
@@ -189,7 +189,7 @@
             this.VerticalSpliter.ColumnCount = 3;
             this.VerticalSpliter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.VerticalSpliter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.VerticalSpliter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 265F));
+            this.VerticalSpliter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 281F));
             this.VerticalSpliter.Controls.Add(this.HorisontalSpliter, 2, 0);
             this.VerticalSpliter.Controls.Add(this.panel1, 0, 0);
             this.VerticalSpliter.Controls.Add(this.panel2, 1, 0);
@@ -197,7 +197,7 @@
             this.VerticalSpliter.Name = "VerticalSpliter";
             this.VerticalSpliter.RowCount = 1;
             this.VerticalSpliter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.VerticalSpliter.Size = new System.Drawing.Size(1362, 770);
+            this.VerticalSpliter.Size = new System.Drawing.Size(1393, 770);
             this.VerticalSpliter.TabIndex = 0;
             // 
             // panel1
@@ -270,7 +270,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(122, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(972, 764);
+            this.panel2.Size = new System.Drawing.Size(987, 764);
             this.panel2.TabIndex = 4;
             // 
             // menuStrip1
@@ -282,7 +282,7 @@
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1393, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -302,38 +302,38 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
             // 
             // сщхранитьToolStripMenuItem
             // 
             this.сщхранитьToolStripMenuItem.Name = "сщхранитьToolStripMenuItem";
-            this.сщхранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.сщхранитьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.сщхранитьToolStripMenuItem.Text = "Сохранить";
             this.сщхранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(189, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -373,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 798);
+            this.ClientSize = new System.Drawing.Size(1393, 798);
             this.Controls.Add(this.VerticalSpliter);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

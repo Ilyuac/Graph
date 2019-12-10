@@ -485,8 +485,66 @@ namespace Graph
 
         private void butTraval_Click(object sender, EventArgs e)
         {
-            Travaler traval = new Travaler(Graph.VCount);
+            FormTravaler traval = new FormTravaler(Graph.VCount);
             traval.Show();
+            traval.FormClosed += new FormClosedEventHandler(GetRoute);
+            
+        }
+
+        private void GetRoute(object s, FormClosedEventArgs e)
+        {
+            //Travaler.Route route = Travaler.GetShortRoute(0);
+            butSimpleR_Click(s,e);
+
+            List<string> Cicles = new List<string>();
+
+            for(int i=0;i<listBoxMatrix.Items.Count;i++)
+                Cicles.Add(listBoxMatrix.Items[i].ToString());
+
+            listBoxMatrix.Items.Clear();
+
+            List<int> Wheidhts = new List<int>();
+
+            int summ = 0;
+            foreach (string str in Cicles)
+            {
+                for (int i = 0; i < str.Length; i++)
+                {
+                    foreach (Edge edge in Graph.E)
+                    {
+                        if (str.Length-1 >= i + 2)
+                        {
+                            if (str[i].ToString() == (edge.Vertex1+1).ToString() && str[i + 2].ToString() == (edge.Vertex2+1).ToString() || str[i].ToString() == (edge.Vertex2+1).ToString() && str[i + 2].ToString() == (edge.Vertex1+1).ToString())
+                            {
+                                summ += edge.Weight;
+                            }
+                        }
+                    }
+                }
+                Wheidhts.Add(summ);
+                summ = 0;
+
+            }
+
+            int Min = Wheidhts.Min();
+
+            for(int i =0;i<Wheidhts.Count;i++)
+            {
+                if(Wheidhts[i]==Min)
+                {
+                    listBoxMatrix.Items.Add("Маршрут:\n" + Cicles[i] + "\nВес маршрута: " + Wheidhts[i].ToString());
+                }
+            }
+
+            //string str="";
+            //foreach(int v in route.Vertaxs)
+            //{
+            //    str += v.ToString() + "->";
+            //}
+            //str = str.Remove(str.Length - 3);
+            //listBoxMatrix.Items.Add(str);
+
+            //listBoxMatrix.Items.Add(route.Weight.ToString());
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
